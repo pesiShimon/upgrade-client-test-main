@@ -1,0 +1,10 @@
+.panel-header {
+    display: flex;
+    justify-content: space-around;
+    height: 40px;
+    align-items: center;
+    background-color: #a7a4a440;
+    .status {
+        color: red;
+    }
+}

@@ -1,0 +1,28 @@
+<div class="main-container">
+        <app-claim-process-header [superClaim]="process.superClaim"></app-claim-process-header>
+    <div class="content">
+        <div class="title">ריכוז מידע בתהליך</div>
+        <div >
+            <div>פרטי מבוטח:</div>
+            <div class="details">
+                <span>שם: {{process.insured.firstName}} {{process.insured.lastName}}</span>
+                <span>ת.ז. {{process.insured.identity}}</span>
+                <span>גיל: {{process.insured.age}}</span>
+                <span>כתובת: {{process.insured.address.streetName}}, {{process.insured.address.cityName}} </span>
+                <span>עובד חברה - {{isCompanyEmployer()}}</span>
+            </div>
+        </div>
+        <div class="title">ריכוז אנשי קשר</div>
+        <div class="details">
+            <span>מספר אנשי קשר בתהליך: {{contactsCount}}</span>
+            <span>פעולות אפשריות:</span>
+            <app-button [text]="'הוספת מבוטח'" (callback)="addInsuredToConstactPersons()"></app-button>
+            <app-button [text]="'איפוס מלא'" (callback)="removeConstactPersons()"></app-button>
+            <app-button [text]="'איפוס אנשי קשר'" (callback)="resetConstactPersons()"></app-button>
+        </div>
+        <div class="title">אנשי קשר</div>
+        <div class="tabel-details">
+           <app-contact-person-tabel (updateContactsCount)="updateContactsCount($event)"></app-contact-person-tabel>
+        </div>
+    </div>
+</div>

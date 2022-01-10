@@ -1,0 +1,37 @@
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>שם איש קשר</th>
+            <th>סוג</th>
+            <th>כתובת</th>
+            <th>טלפון נייד</th>
+            <th>דוא"ל</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let contact of contactPersons">
+            <td>
+                <span ng-if="!isInsuredInHealthClaim" data-ng-class="{'icon-envelope': contact.deliveryFlag}"></span>
+            </td>
+            <td >
+                {{contact.firstName}} {{contact.lastName}}
+            </td>
+            <td>
+                {{contact.type.value}}
+            </td>
+            <td>
+                {{contact.address.cityName}} {{contact.address.streetName}}
+            </td>
+            <td>
+                <div *ngIf="contact.cellPhone">{{contact.cellPhone | phone}}</div>
+            </td>
+            <td>
+                <div>{{contact.email}}</div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div>
+   <button class="new-contact-person-btn" (click)="addNewContactPerson()">הוסף איש קשר</button> 
+</div>

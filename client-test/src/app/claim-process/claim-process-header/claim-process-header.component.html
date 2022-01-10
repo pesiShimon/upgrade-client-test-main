@@ -1,0 +1,17 @@
+<div class="panel-header">
+    <div class="header-text">
+        <span>תביעת אל: {{superClaim.superClaimStatus.value}}</span>
+    </div>
+    <div class="header-text status">{{statusProcess}}</div>
+    <div class="header-text">
+        <span>מצב תביעה: </span>
+        <span>{{superClaim.superClaimStatus.value}}</span>
+    </div>
+    <div class="header-text">
+        <span>תביעות משתתפות: </span>
+        <span>{{getClaims()}}</span>
+    </div>
+    <div>
+        <app-button [text]="'רענון תהליך'" (callback)="processRefresh()"></app-button>
+    </div>
+</div>
